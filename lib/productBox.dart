@@ -1,5 +1,6 @@
 // ignore_for_file: file_names, prefer_const_constructors, prefer_interpolation_to_compose_strings
 
+import 'package:advanced_layoud_app/ratingBox.dart';
 import 'package:flutter/material.dart';
 
 class ProductBox extends StatelessWidget {
@@ -38,6 +39,7 @@ class ProductBox extends StatelessWidget {
                     ),
                     Text(description),
                     Text("Price: " + price.toString()),
+                    RatingBox(),
                   ],
                 ),
                 // ignore: prefer_const_literals_to_create_immutables
