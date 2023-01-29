@@ -23,16 +23,24 @@ class ProductBox extends StatelessWidget {
       height: 120,
       child: Card(
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Image.asset('assets/appimages/' + image),
             Expanded(
-              child: Column(
+              child: Container(
+                padding: EdgeInsets.all(5),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Text(
+                      name,
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    Text(description),
+                    Text("Price:" + price.toString()),
+                  ],
+                ),
                 // ignore: prefer_const_literals_to_create_immutables
-                children: <Widget>[
-                  Text('name'),
-                  Text('description'),
-                  Text('price')
-                ],
               ),
             ),
           ],
