@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types
+// ignore_for_file: camel_case_types, prefer_const_constructors
 
 import 'package:advanced_layoud_app/myHomePage.dart';
 import 'package:flutter/material.dart';
@@ -10,9 +10,12 @@ class myApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Advanced Layoud App',
-      home: myHomePage(title: 'Advanced Layoud'),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: myHomePage(title: 'Product layout demo home page'),
     );
   }
 }

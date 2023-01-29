@@ -37,7 +37,7 @@ class ProductBox extends StatelessWidget {
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     Text(description),
-                    Text("Price:" + price.toString()),
+                    Text("Price: " + price.toString()),
                   ],
                 ),
                 // ignore: prefer_const_literals_to_create_immutables
