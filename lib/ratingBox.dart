@@ -27,6 +27,12 @@ class _RatingBoxState extends State<RatingBox> {
     });
   }
 
+  void _setRantingAsFour() {
+    setState(() {
+      _rating = 4;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     double _size = 20;
@@ -57,7 +63,7 @@ class _RatingBoxState extends State<RatingBox> {
         Container(
           padding: EdgeInsets.all(0),
           child: IconButton(
-            icon: (_rating >= 1
+            icon: (_rating >= 2
                 ? Icon(
                     Icons.star,
                     size: _size,
@@ -74,7 +80,7 @@ class _RatingBoxState extends State<RatingBox> {
         Container(
           padding: EdgeInsets.all(0),
           child: IconButton(
-            icon: (_rating >= 1
+            icon: (_rating >= 3
                 ? Icon(
                     Icons.star,
                     size: _size,
@@ -85,6 +91,23 @@ class _RatingBoxState extends State<RatingBox> {
                   )),
             color: Colors.red[500],
             onPressed: _setRantingAsThree,
+            iconSize: _size,
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.all(0),
+          child: IconButton(
+            icon: (_rating >= 4
+                ? Icon(
+                    Icons.star,
+                    size: _size,
+                  )
+                : Icon(
+                    Icons.star_border,
+                    size: _size,
+                  )),
+            color: Colors.red[500],
+            onPressed: _setRantingAsFour,
             iconSize: _size,
           ),
         ),
