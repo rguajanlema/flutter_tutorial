@@ -1,42 +1,17 @@
 // ignore_for_file: prefer_const_constructors, no_leading_underscores_for_local_identifiers, avoid_print
 
+import 'package:advanced_layoud_app/model/product.dart';
 import 'package:flutter/material.dart';
 
-class RatingBox extends StatefulWidget {
-  @override
-  _RatingBoxState createState() => _RatingBoxState();
-}
+class RatingBox extends StatelessWidget {
+  const RatingBox({Key? key, required this.item}) : super(key: key);
 
-class _RatingBoxState extends State<RatingBox> {
-  int _rating = 0;
-  void _setRantingAsOne() {
-    setState(() {
-      _rating = 1;
-    });
-  }
-
-  void _setRantingAsTwo() {
-    setState(() {
-      _rating = 2;
-    });
-  }
-
-  void _setRantingAsThree() {
-    setState(() {
-      _rating = 3;
-    });
-  }
-
-  void _setRantingAsFour() {
-    setState(() {
-      _rating = 4;
-    });
-  }
+  final Product item;
 
   @override
   Widget build(BuildContext context) {
     double _size = 20;
-    print(_rating);
+    print(item.rating);
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
@@ -46,7 +21,7 @@ class _RatingBoxState extends State<RatingBox> {
         Container(
           padding: EdgeInsets.all(0),
           child: IconButton(
-            icon: (_rating >= 1
+            icon: (item.rating >= 1
                 ? Icon(
                     Icons.star,
                     size: _size,
@@ -56,14 +31,14 @@ class _RatingBoxState extends State<RatingBox> {
                     size: _size,
                   )),
             color: Colors.red[500],
-            onPressed: _setRantingAsOne,
+            onPressed: () => this.item.updateRating(1),
             iconSize: _size,
           ),
         ),
         Container(
           padding: EdgeInsets.all(0),
           child: IconButton(
-            icon: (_rating >= 2
+            icon: (item.rating >= 2
                 ? Icon(
                     Icons.star,
                     size: _size,
@@ -73,14 +48,14 @@ class _RatingBoxState extends State<RatingBox> {
                     size: _size,
                   )),
             color: Colors.red[500],
-            onPressed: _setRantingAsTwo,
+            onPressed: () => this.item.updateRating(2),
             iconSize: _size,
           ),
         ),
         Container(
           padding: EdgeInsets.all(0),
           child: IconButton(
-            icon: (_rating >= 3
+            icon: (item.rating >= 3
                 ? Icon(
                     Icons.star,
                     size: _size,
@@ -90,24 +65,7 @@ class _RatingBoxState extends State<RatingBox> {
                     size: _size,
                   )),
             color: Colors.red[500],
-            onPressed: _setRantingAsThree,
-            iconSize: _size,
-          ),
-        ),
-        Container(
-          padding: EdgeInsets.all(0),
-          child: IconButton(
-            icon: (_rating >= 4
-                ? Icon(
-                    Icons.star,
-                    size: _size,
-                  )
-                : Icon(
-                    Icons.star_border,
-                    size: _size,
-                  )),
-            color: Colors.red[500],
-            onPressed: _setRantingAsFour,
+            onPressed: () => this.item.updateRating(3),
             iconSize: _size,
           ),
         ),
